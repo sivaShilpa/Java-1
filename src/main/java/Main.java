@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -5,7 +6,31 @@ public class Main {
     public static void main(String[] args) {
 //        ex1();
 //        ex2();
-        ex3();
+//        ex3();
+        ex4();
+
+    }
+
+    private static void ex4() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a word to check if palindrome: ");
+        String input = scanner.nextLine();
+        char[] inputArray = input.toLowerCase().toCharArray();
+        String isPalindrome = "NO";
+
+        int i = 0;
+        while(i < input.length()/2){
+            if(inputArray[i] == inputArray[(input.length()-1)-i]){
+                isPalindrome = "YES";
+            }
+            else{
+                isPalindrome = "NO";
+                break;
+            }
+            i++;
+        }
+
+        System.out.println(isPalindrome);
     }
 
     private static void ex3() {
