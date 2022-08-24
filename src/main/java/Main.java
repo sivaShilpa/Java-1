@@ -7,8 +7,45 @@ public class Main {
 //        ex1();
 //        ex2();
 //        ex3();
-        ex4();
+//        ex4();
+        ex5();
+    }
 
+    private static void ex5() {
+        Scanner scanner = new Scanner(System.in);
+        String stopWord = "quit";
+        String isquit = " ";
+
+        while(isquit != stopWord){
+            System.out.println("Enter a string: ");
+            String string = scanner.nextLine();
+
+            if(!string.toLowerCase().equals(stopWord)){
+                int vowelCount = 0;
+                int consonantCount = 0;
+                char[] stringArray = string.toLowerCase().toCharArray();
+                for(int i = 0; i < stringArray.length; i++){
+                    if(stringArray[i] == 'a' || stringArray[i] == 'e' || stringArray[i] == 'i' ||
+                            stringArray[i] == 'o' || stringArray[i] == 'u'){
+                        vowelCount++;
+                    }
+                    else if(stringArray[i] == 'b' || stringArray[i] == 'c' || stringArray[i] == 'd' ||
+                            stringArray[i] == 'f' || stringArray[i] == 'g' || stringArray[i] == 'h' ||
+                            stringArray[i] == 'j' || stringArray[i] == 'k' || stringArray[i] == 'l' ||
+                            stringArray[i] == 'm' || stringArray[i] == 'n' || stringArray[i] == 'p' ||
+                            stringArray[i] == 'q' || stringArray[i] == 'r' || stringArray[i] == 's' ||
+                            stringArray[i] == 't' || stringArray[i] == 'v' || stringArray[i] == 'w' ||
+                            stringArray[i] == 'x' || stringArray[i] == 'y' || stringArray[i] == 'z') {
+                        consonantCount++;
+                    }
+                }
+                System.out.println("Number of Vowels: " + vowelCount);
+                System.out.println("Number of Consonants: " + consonantCount);
+            }
+            else{
+                isquit = stopWord;
+            }
+        }
     }
 
     private static void ex4() {
