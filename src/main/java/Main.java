@@ -8,7 +8,50 @@ public class Main {
 //        ex2();
 //        ex3();
 //        ex4();
-        ex5();
+//        ex5();
+//        ex6();
+        ex7();
+    }
+
+    private static void ex7() {
+        Scanner scanner = new Scanner(System.in);
+        int result = 0;
+
+        System.out.println("Enter first number: ");
+        int firstNum = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter second number: ");
+        int secondNum = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter operation (add, sub, mul, div): ");
+        String operation = scanner.nextLine();
+
+        if(operation.equals("add")){
+            result = firstNum + secondNum;
+            System.out.println("Result: " + result);
+        } else if (operation.equals("sub")) {
+            result = firstNum - secondNum;
+            System.out.println("Result: " + result);
+        } else if (operation.equals("mul")) {
+            result = firstNum * secondNum;
+            System.out.println("Result: " + result);
+        } else if (operation.equals("div")) {
+            result = firstNum/secondNum;
+            System.out.println("Result: " + result);
+        } else {
+            System.out.println("Wrong operation entered.");
+        }
+
+    }
+
+    private static void ex6() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter first number: ");
+        int firstNum = Integer.parseInt(scanner.nextLine());
+        int secondNum = Integer.parseInt(scanner.nextLine());
+        int result = firstNum + secondNum;
+        System.out.println("Result: " + result);
+
     }
 
     private static void ex5() {
