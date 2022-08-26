@@ -1,4 +1,7 @@
+import javax.swing.text.NumberFormatter;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -10,7 +13,52 @@ public class Main {
 //        ex4();
 //        ex5();
 //        ex6();
-        ex7();
+//        ex7();
+        ex8();
+
+    }
+
+    private static void ex8() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter price per square feet: ");
+        float pricePerSqft = Float.parseFloat(scanner.nextLine());
+        float dimensionsInFloat = 0.0F;
+
+
+        while(true){
+           System.out.println("Enter room dimensions (width x height): ");
+           String dimensions = scanner.nextLine();
+           if(dimensions.equals("done")){
+               break;
+           }
+           String width = "";
+           String height = "";
+           StringTokenizer stringTokenizer = new StringTokenizer(dimensions);
+           ArrayList<String> tokens = new ArrayList<>();
+           int counter = 0;
+
+           while(stringTokenizer.hasMoreTokens()){
+               tokens.add(stringTokenizer.nextToken());
+           }
+
+           width = tokens.get(0);
+           height = tokens.get(2);
+//           char[] dimensionsArray = dimensions.toCharArray();
+//           for(int i = 0; i < dimensions.length(); i++){
+//               if(dimensionsArray[i] != 'x'){
+//                   width += dimensionsArray[i];
+//               }
+//               else{
+//                   i++;
+//                   height += dimensionsArray[i];
+//               }
+//           }
+           dimensionsInFloat += (Float.parseFloat(width) * Float.parseFloat(height));
+       }
+
+        System.out.println("Total cost: " +
+                NumberFormat.getCurrencyInstance(Locale.US).format(dimensionsInFloat*pricePerSqft));
     }
 
     private static void ex7() {
