@@ -12,7 +12,30 @@ public class Main {
 //        ex6();
 //        ex7();
 //        ex8();
-        ex9();
+//        ex9();
+        ex10();
+    }
+
+    private static void ex10() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String string = scanner.nextLine();
+        StringTokenizer stringTokenizer = new StringTokenizer(string);
+
+        char[] stringArray;
+        String stringWord = "";
+
+        while(stringTokenizer.hasMoreTokens()){
+            stringWord = stringTokenizer.nextToken();
+            stringArray = stringWord.toCharArray();
+            String spaces = "";
+
+            for(int i = 0; i < stringArray.length; i++){
+                System.out.println(spaces + stringArray[i]);
+                spaces += " ";
+            }
+        }
+
     }
 
     private static void ex9() {
