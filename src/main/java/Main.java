@@ -1,9 +1,6 @@
 import javax.swing.text.NumberFormatter;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,8 +11,24 @@ public class Main {
 //        ex5();
 //        ex6();
 //        ex7();
-        ex8();
+//        ex8();
+        ex9();
+    }
 
+    private static void ex9() {
+        Random random = new Random();
+        int randomNum = random.nextInt(6);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a number: ");
+        int enteredNum = scanner.nextInt();
+
+        while(enteredNum != randomNum){
+            System.out.println("Try again...");
+            System.out.println("Enter a number: ");
+            enteredNum = scanner.nextInt();
+        }
+        System.out.println("You guessed it!!!");
     }
 
     private static void ex8() {
